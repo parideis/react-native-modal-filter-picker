@@ -16,7 +16,7 @@ export default class ModalFilterPicker extends Component {
     }
   }
 
-  componentWillReceiveProps (newProps) {
+  componentDidUpdate (newProps) {
     if ((!this.props.visible && newProps.visible) || (this.props.options !== newProps.options)) {
       this.setState({
         filter: '',
@@ -157,7 +157,7 @@ export default class ModalFilterPicker extends Component {
     }
   };
 
-  keyExtractor = (item, index) => index;
+  keyExtractor = (item, index) => index+"";
 
   renderCancelButton = () => {
     const {
